@@ -1,3 +1,25 @@
 <h1>Welcome to my New App</h1>
 
+<br>
+<br>
+
 <h3>I am not entirely sure what I am building, but either way it will be amazing!!!</h3>
+
+<div class="text-center">
+  <button type="button" class="btn btn-lg.round">
+    <%= link_to 'Add a New Location!', new_location_path %>
+    </button>
+</div>
+
+
+<hr>
+<hr>
+<hr>
+
+<% @locations.each do |location| %>
+  <div class="booyah-box col-10 offset-1">
+    <h1><%= location.name %></h1><br />
+    <p><%= location.description %></p><br />
+    <i><%= location.description %></p>
+  </div>
+<% end %> 

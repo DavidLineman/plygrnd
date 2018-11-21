@@ -5,7 +5,16 @@ class LocationsController < ApplicationController
   end
 
   def new
-    @location = location.new
+    @location = Location.new
+  end
+
+  def create
+    Location.create(location_params)
+    redirect_to root_path
+  end
+
+  def location_params
+    params.require(:location).permit(:name, :description, :address)
   end
 
 end
